@@ -54527,6 +54527,13 @@ func schema_k8sio_kube_scheduler_config_v1_KubeSchedulerConfiguration(ref common
 							Format:      "int64",
 						},
 					},
+					"pluginMetricsSamplePercent": {
+						SchemaProps: spec.SchemaProps{
+							Description: "PluginMetricsSamplePercent is the percentage of the plugins execution metrics to be sampled for profiling purposes. This helps debugging for the scheduler's performance. NOTE: This could increase overhead of the scheduler. If this value is null, the default value 10(%) will be used.",
+							Type:        []string{"integer"},
+							Format:      "int32",
+						},
+					},
 					"profiles": {
 						VendorExtensible: spec.VendorExtensible{
 							Extensions: spec.Extensions{

@@ -422,7 +422,7 @@ profiles:
 	defaultPodInitialBackoffSeconds := int64(1)
 	defaultPodMaxBackoffSeconds := int64(10)
 	defaultPercentageOfNodesToScore := pointer.Int32(0)
-	defaultPluginMetricsSamplePercent := pointer.Int32(0)
+	defaultPluginMetricsSamplePercent := pointer.Int32(10)
 
 	testcases := []struct {
 		name             string

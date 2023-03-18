@@ -417,6 +417,7 @@ func autoConvert_v1_KubeSchedulerConfiguration_To_config_KubeSchedulerConfigurat
 	if err := metav1.Convert_Pointer_int64_To_int64(&in.PodMaxBackoffSeconds, &out.PodMaxBackoffSeconds, s); err != nil {
 		return err
 	}
+	out.PluginMetricsSamplePercent = (*int32)(unsafe.Pointer(in.PluginMetricsSamplePercent))
 	if in.Profiles != nil {
 		in, out := &in.Profiles, &out.Profiles
 		*out = make([]config.KubeSchedulerProfile, len(*in))
@@ -454,6 +455,7 @@ func autoConvert_config_KubeSchedulerConfiguration_To_v1_KubeSchedulerConfigurat
 	if err := metav1.Convert_int64_To_Pointer_int64(&in.PodMaxBackoffSeconds, &out.PodMaxBackoffSeconds, s); err != nil {
 		return err
 	}
+	out.PluginMetricsSamplePercent = (*int32)(unsafe.Pointer(in.PluginMetricsSamplePercent))
 	if in.Profiles != nil {
 		in, out := &in.Profiles, &out.Profiles
 		*out = make([]v1.KubeSchedulerProfile, len(*in))

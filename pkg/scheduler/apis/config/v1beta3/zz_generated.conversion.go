@@ -454,6 +454,7 @@ func autoConvert_config_KubeSchedulerConfiguration_To_v1beta3_KubeSchedulerConfi
 	if err := v1.Convert_int64_To_Pointer_int64(&in.PodMaxBackoffSeconds, &out.PodMaxBackoffSeconds, s); err != nil {
 		return err
 	}
+	// WARNING: in.PluginMetricsSamplePercent requires manual conversion: does not exist in peer-type
 	if in.Profiles != nil {
 		in, out := &in.Profiles, &out.Profiles
 		*out = make([]v1beta3.KubeSchedulerProfile, len(*in))
