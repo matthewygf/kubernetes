@@ -233,7 +233,7 @@ const (
 	MaxWeight = MaxTotalScore / MaxCustomPriorityScore
 
 	// DefaultPluginMetricsSamplePercent defines the percentage of the plugins
-	// execution metrics to be sampled for profiling purposes
+	// execution metrics to be sampled for profiling purposes.
 	DefaultPluginMetricsSamplePercent = 10
 )
 
