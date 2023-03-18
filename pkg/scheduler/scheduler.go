@@ -95,6 +95,8 @@ type Scheduler struct {
 
 	percentageOfNodesToScore int32
 
+	pluginMetricsSamplePercent int32
+
 	nextStartNodeIndex int
 }
 
@@ -242,6 +244,7 @@ var defaultSchedulerOptions = schedulerOptions{
 	podMaxBackoffSeconds:              int64(internalqueue.DefaultPodMaxBackoffDuration.Seconds()),
 	podMaxInUnschedulablePodsDuration: internalqueue.DefaultPodMaxInUnschedulablePodsDuration,
 	parallelism:                       int32(parallelize.DefaultParallelism),
+	pluginMetricsSamplePercent:        schedulerapi.DefaultPercentageOfNodesToScore,
 	// Ideally we would statically set the default profile here, but we can't because
 	// creating the default profile may require testing feature gates, which may get
 	// set dynamically in tests. Therefore, we delay creating it until New is actually

@@ -44,8 +44,6 @@ import (
 )
 
 const (
-	// Percentage of plugin metrics to be sampled.
-	pluginMetricsSamplePercent = 10
 	// minFeasibleNodesToFind is the minimum number of nodes that would be scored
 	// in each scheduling cycle. This is a semi-arbitrary value to ensure that a
 	// certain minimum of nodes are checked for feasibility. This in turn helps
@@ -82,7 +80,7 @@ func (sched *Scheduler) scheduleOne(ctx context.Context) {
 	// Synchronously attempt to find a fit for the pod.
 	start := time.Now()
 	state := framework.NewCycleState()
-	state.SetRecordPluginMetrics(rand.Intn(100) < pluginMetricsSamplePercent)
+	state.SetRecordPluginMetrics(rand.Intn(100) < int(sched.pluginMetricsSamplePercent))
 
 	// Initialize an empty podsToActivate struct, which will be filled up by plugins or stay empty.
 	podsToActivate := framework.NewPodsToActivate()

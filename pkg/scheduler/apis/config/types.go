@@ -226,6 +226,10 @@ const (
 
 	// MaxWeight defines the max weight value allowed for custom PriorityPolicy
 	MaxWeight = MaxTotalScore / MaxCustomPriorityScore
+
+	// DefaultPluginMetricsSamplePercent defines the percentage of the plugins
+	// execution metrics to be sampled for profiling purposes
+	DefaultPluginMetricsSamplePercent = 10
 )
 
 // Names returns the list of enabled plugin names.
