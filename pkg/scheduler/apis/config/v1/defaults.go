@@ -162,6 +162,10 @@ func SetDefaults_KubeSchedulerConfiguration(obj *configv1.KubeSchedulerConfigura
 		obj.PodMaxBackoffSeconds = pointer.Int64(10)
 	}
 
+	if obj.PluginMetricsSamplePercent == nil {
+		obj.PluginMetricsSamplePercent = pointer.Int32(config.DefaultPluginMetricsSamplePercent)
+	}
+
 	// Enable profiling by default in the scheduler
 	if obj.EnableProfiling == nil {
 		obj.EnableProfiling = pointer.Bool(true)

@@ -87,6 +87,11 @@ type KubeSchedulerConfiguration struct {
 	// the default value (10s) will be used.
 	PodMaxBackoffSeconds int64
 
+	// PluginMetricsSamplePercent is the percentage of plugin execution metrics
+	// to be recorded. This helps debugging when noticing performance degradation with the Scheduler.
+	// If this value is null, the default value 10(%) will be used.
+	PluginMetricsSamplePercent *int32
+
 	// Profiles are scheduling profiles that kube-scheduler supports. Pods can
 	// choose to be scheduled under a particular profile by setting its associated
 	// scheduler name. Pods that don't specify any scheduler name are scheduled

@@ -422,6 +422,7 @@ profiles:
 	defaultPodInitialBackoffSeconds := int64(1)
 	defaultPodMaxBackoffSeconds := int64(10)
 	defaultPercentageOfNodesToScore := pointer.Int32(0)
+	defaultPluginMetricsSamplePercent := pointer.Int32(0)
 
 	testcases := []struct {
 		name             string
@@ -490,9 +491,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "default-scheduler",
@@ -561,9 +563,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "default-scheduler",
@@ -632,9 +635,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "default-scheduler",
@@ -734,9 +738,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "default-scheduler",
@@ -804,9 +809,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "default-scheduler",
@@ -848,9 +854,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "default-scheduler",
@@ -967,9 +974,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "default-scheduler",
@@ -1089,9 +1097,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "default-scheduler",
@@ -1204,9 +1213,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "foo-profile",
@@ -1318,9 +1328,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "foo-profile",
@@ -1432,9 +1443,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "foo-profile",
@@ -1564,9 +1576,10 @@ profiles:
 					Burst:       100,
 					ContentType: "application/vnd.kubernetes.protobuf",
 				},
-				PercentageOfNodesToScore: defaultPercentageOfNodesToScore,
-				PodInitialBackoffSeconds: defaultPodInitialBackoffSeconds,
-				PodMaxBackoffSeconds:     defaultPodMaxBackoffSeconds,
+				PercentageOfNodesToScore:   defaultPercentageOfNodesToScore,
+				PluginMetricsSamplePercent: defaultPluginMetricsSamplePercent,
+				PodInitialBackoffSeconds:   defaultPodInitialBackoffSeconds,
+				PodMaxBackoffSeconds:       defaultPodMaxBackoffSeconds,
 				Profiles: []kubeschedulerconfig.KubeSchedulerProfile{
 					{
 						SchedulerName: "high-throughput-profile",
