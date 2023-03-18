@@ -118,6 +118,7 @@ type schedulerOptions struct {
 	frameworkCapturer          FrameworkCapturer
 	parallelism                int32
 	applyDefaultProfile        bool
+	pluginMetricsSamplePercent int32
 }
 
 // Option configures a Scheduler
@@ -175,6 +176,16 @@ func WithPercentageOfNodesToScore(percentageOfNodesToScore *int32) Option {
 	return func(o *schedulerOptions) {
 		if percentageOfNodesToScore != nil {
 			o.percentageOfNodesToScore = *percentageOfNodesToScore
+		}
+	}
+}
+
+// WithPluginMetricsSamplePercent sets pluginMetricsSamplePercent for Scheduler.
+// Default is 10, i.e. 10%.
+func WithPluginMetricsSamplePercent(pluginMetricsSamplePercent *int32) Option {
+	return func(o *schedulerOptions) {
+		if pluginMetricsSamplePercent != nil {
+			o.pluginMetricsSamplePercent = *pluginMetricsSamplePercent
 		}
 	}
 }
@@ -319,7 +330,7 @@ func New(client clientset.Interface,
 		internalqueue.WithClusterEventMap(clusterEventMap),
 		internalqueue.WithPodMaxInUnschedulablePodsDuration(options.podMaxInUnschedulablePodsDuration),
 		internalqueue.WithPreEnqueuePluginMap(preEnqueuePluginMap),
-		internalqueue.WithPluginMetricsSamplePercent(pluginMetricsSamplePercent),
+		internalqueue.WithPluginMetricsSamplePercent(int(options.pluginMetricsSamplePercent)),
 		internalqueue.WithMetricsRecorder(*metricsRecorder),
 	)
 
