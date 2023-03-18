@@ -347,6 +347,7 @@ func Setup(ctx context.Context, opts *options.Options, outOfTreeRegistryOptions 
 		scheduler.WithFrameworkOutOfTreeRegistry(outOfTreeRegistry),
 		scheduler.WithPodMaxBackoffSeconds(cc.ComponentConfig.PodMaxBackoffSeconds),
 		scheduler.WithPodInitialBackoffSeconds(cc.ComponentConfig.PodInitialBackoffSeconds),
+		scheduler.WithPluginMetricsSamplePercent(cc.ComponentConfig.PluginMetricsSamplePercent),
 		scheduler.WithPodMaxInUnschedulablePodsDuration(cc.PodMaxInUnschedulablePodsDuration),
 		scheduler.WithExtenders(cc.ComponentConfig.Extenders...),
 		scheduler.WithParallelism(cc.ComponentConfig.Parallelism),
