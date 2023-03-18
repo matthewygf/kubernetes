@@ -836,6 +836,7 @@ func TestValidateKubeSchedulerConfigurationV1beta3(t *testing.T) {
 func TestValidateKubeSchedulerConfigurationV1(t *testing.T) {
 	podInitialBackoffSeconds := int64(1)
 	podMaxBackoffSeconds := int64(1)
+	pluginMetricsSamplePercent := int32(1)
 	validConfig := &config.KubeSchedulerConfiguration{
 		TypeMeta: metav1.TypeMeta{
 			APIVersion: configv1.SchemeGroupVersion.String(),
@@ -856,8 +857,9 @@ func TestValidateKubeSchedulerConfigurationV1(t *testing.T) {
 			ResourceNamespace: "name",
 			ResourceName:      "name",
 		},
-		PodInitialBackoffSeconds: podInitialBackoffSeconds,
-		PodMaxBackoffSeconds:     podMaxBackoffSeconds,
+		PodInitialBackoffSeconds:   podInitialBackoffSeconds,
+		PodMaxBackoffSeconds:       podMaxBackoffSeconds,
+		PluginMetricsSamplePercent: pointer.Int32(pluginMetricsSamplePercent),
 		Profiles: []config.KubeSchedulerProfile{
 			{
 				SchedulerName:            "me",

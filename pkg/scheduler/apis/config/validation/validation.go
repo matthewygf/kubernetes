@@ -98,6 +98,7 @@ func ValidateKubeSchedulerConfiguration(cc *config.KubeSchedulerConfiguration) u
 	}
 
 	errs = append(errs, validatePercentageOfNodesToScore(field.NewPath("percentageOfNodesToScore"), cc.PercentageOfNodesToScore))
+	errs = append(errs, validatePluginMetricsSamplePercent(field.NewPath("pluginMetricsSamplePercent"), cc.PluginMetricsSamplePercent))
 
 	if cc.PodInitialBackoffSeconds <= 0 {
 		errs = append(errs, field.Invalid(field.NewPath("podInitialBackoffSeconds"),
@@ -128,6 +129,15 @@ func validatePercentageOfNodesToScore(path *field.Path, percentageOfNodesToScore
 	if percentageOfNodesToScore != nil {
 		if *percentageOfNodesToScore < 0 || *percentageOfNodesToScore > 100 {
 			return field.Invalid(path, *percentageOfNodesToScore, "not in valid range [0-100]")
+		}
+	}
+	return nil
+}
+
+func validatePluginMetricsSamplePercent(path *field.Path, pluginMetricsSamplePercent *int32) error {
+	if pluginMetricsSamplePercent != nil {
+		if *pluginMetricsSamplePercent < 0 || *pluginMetricsSamplePercent > 100 {
+			return field.Invalid(path, *pluginMetricsSamplePercent, "not in valid range [0-100]")
 		}
 	}
 	return nil
